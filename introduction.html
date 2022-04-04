@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자소서 글자수 계산기</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        h1 {
+            margin-top: 30px;
+        }
+        #count {
+            float: right;
+        }
+    </style>
+</head>
+<body class="container">
+    <h1>자기소개</h1>
+    <textarea onkeydown='counter();' class="form-control" rows="3" id="jasoseol">저는 인성 문제가 없습니다.</textarea>
+    <span id="count">(0/200)</span>
+    <script>
+                /*var content = document.getElementById('jasoseol').value; // getElementById 특정 id를 가진 html에 접근해서
+                그 값을 가져올 수 있습니다
+        console.log(content.length); // 글자수를 나타냄
+        document.getElementById("content").innerHTML = '(' + content.length + '/200)';*/
+        function counter() {
+            var content = document.getElementById('jasoseol').value; 
+            if (content.length > 200 ){
+                content = content.substring(0,200); //0이상 200미만   //제한된 글자 수를 넘으면 더 이상 작성 못하게 하는법 ->.substring() = 몇 글자 까지 자른다
+                document.getElementById('jasoseol').value = content;
+                //이 긴 코드를 우리는 글자를 입력할때마다 표시하기가 매번 사용하기 불편해서 -> 함수 등장 fuction 함수이름 () {}
+            }
+            //count라는 id를 가진 span태그에 집어 넣을 수 있음
+            document.getElementById('count').innerHTML = '(' + content.length + '/200)';//어떤 값을 자바스크립트로 만들어서  그 값을 역으로 dom에 집어넣는
+        } 
+        counter(); // 함수실행 여러줄의 코드를 하나의 함수로 뭍어서 한번에 실행 할 수 있도록
+         //글자를 쓸때마다 자동으로 글자 수를 세려면 어떻게 할까 ??  = 키보드를 누룰때마다 글자 수를 세어라 -> 이벤트 개념을 이용해야 함
+        //이벤트 핸들링 = 이벤트가 발생하면 (뭐뭐 해라)(ex글자 수를 세어라) 실행시키는 코드
+        //이벤트 사용하는 방법 = <textarea 이벤트 = 이벤트 핸들링></textarea>
+    </script>
+</body>
+</html>

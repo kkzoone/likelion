@@ -32,6 +32,7 @@
         for (var i = 0; i < 6; i++){
             var num = parseInt(Math.random() * 45 + 1);
             if (lotto.indexOf(num) == -1) { //중복되는 코드가 아닐때만 로또번호에 숫자를 추가함 -1은 인덱스안에 값이 없다는 뜻
+                                            //indexOf는 배열안에 값이 있으면 그 값이 위치,번호 즉 인덱스가 나오는데 값이 없다면 -1
                 lotto.push(num); // 값이 중복이 아닐경우 푸쉬해줌
             }
         }
