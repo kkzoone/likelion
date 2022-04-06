@@ -49,17 +49,17 @@
   crossorigin="anonymous"></script>
     <script>
         var hp = 3;
-        $('#drone').click(function(){
-            $('#spit').fadeIn();
+        $('#drone').click(function(){ //jquery 문법사용 . click이벤트 사용
+            $('#spit').fadeIn();    //jquery 함수사용 함수나 구체적인 문법을 모를때는 구글링을 통해서 알 수 있다
             $('#spit').animate({left: '+=250'});
-            $('#spit').fadeOut(function(){
+            $('#spit').fadeOut(function(){ //callback 함수사용
                 hp = hp - 1;
                 $('#hp').text('HP :' + hp);
                 if(hp == 0) {
                     $('#bunker').fadeOut();
                 }
             });
-            $('#spit').css({left: '150px'});
+            $('#spit').css({left: '150px'}); // jquery 함수
         });
     </script>
 </body>
