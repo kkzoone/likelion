@@ -15,21 +15,21 @@
 # 2. 얼음을 넣든다
 # 3...
 
-#total_dictionary = {}
-#while True:
-#    question = input("질문을 입력해주세요 : ")
-#    if question == "q":
-#        break
-#    else:
-#        total_dictionary[question] = "" 
+total_dictionary = {}
+while True:
+    question = input("질문을 입력해주세요 : ")
+    if question == "q":
+        break
+    else:
+        total_dictionary[question] = ""  
 #1.사용자에게 입력 받은 key을 question변수를 totaldictionary 키로 만들어 줍니다 
 #2. 키랑 벨류는 같이 다녀야 함 그래서 처음에 빈 문자열로 넣었고
 #질문은 키에다 넣었고 답변을 벨류에다 넣었음
-#for i in total_dictionary:
-#    print(i)
-#    answer = input("답변을 입력해주세요 : ") # 2. 답변을 입력 받은 뒤에 answer라는 변수에 치환에서 넣었슴 
-#    total_dictionary[i] = answer
-#print(total_dictionary) 
+for i in total_dictionary:
+    print(i)
+    answer = input("답변을 입력해주세요 : ") # 2. 답변을 입력 받은 뒤에 answer라는 변수에 치환에서 넣었슴 
+    total_dictionary[i] = answer
+print(total_dictionary) 
 
 total_list = []
 
